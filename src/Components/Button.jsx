@@ -1,9 +1,11 @@
 import React from "react";
 
-export default function Button1() {
+export default function Button1({ handler }) {
   return (
     <>
-      <button>Add</button>
+      <button onClick={handler} type="button">
+        Add
+      </button>
     </>
   );
 }

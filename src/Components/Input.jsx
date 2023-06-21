@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function InputFiled() {
+export default function InputFiled({handler}) {
   return (
     <>
-      <input type="text" />
+      <input onChange={handler} type="text" required/>
     </>
   );
 }
