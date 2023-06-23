@@ -1,9 +1,9 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 import "./App.css";
 import Button1 from "./Components/Button";
 import Header from "./Components/Header";
 import InputFiled from "./Components/Input";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Form } from "react-bootstrap";
 import { useState } from "react";
 import { addTask, removeTask, completeTask } from "./Redux/taskSlice";
 import TaskCard from "./Components/TaskCard";
@@ -15,13 +15,15 @@ function App() {
   const [task, setTask] = useState();
   const onchangeHandler = (e) => setTask(() => e.target.value);
 
-  const handlerButton = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     const newTask = {
       task: task,
       id: Date.now(),
       complete: false,
     };
     dispatch(addTask(newTask));
+    e.target.in.value = "";
   };
 
   const taskHandler = (action, id) => {
@@ -53,8 +55,10 @@ function App() {
             xs={8}
             className="d-flex justify-content-center align-items-center"
           >
-            <InputFiled handler={onchangeHandler} />
-            <Button1 handler={handlerButton} />
+            <Form onSubmit={handleSubmit}>
+              <InputFiled handler={onchangeHandler} />
+              <Button1 />
+            </Form>
           </Col>
 
           <Col></Col>

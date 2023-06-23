@@ -1,0 +1,17 @@
+.card_pending {
+  background-color: #A7C7E7;
+  border-radius: 5px;
+}
+.card_complete {
+    background-color: 	#C1E1C1;
+    border-radius: 5px;
+  }
+.card{
+    margin: 10px;
+}
+.taskName{
+    width: 20px;
+    display: flex;
+    
+    flex-wrap: wrap;
+}

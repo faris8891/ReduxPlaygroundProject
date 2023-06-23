@@ -1,0 +1,13 @@
+.taskName {
+  width: 350px;
+  height: 40px;
+  margin: 10px 0px 10px 10px;
+  border-radius: 2px;
+  border-style: solid;
+  border-color: #2980b9;
+}
+.taskName:focus {
+  border-style: solid;
+  border-color: #2980b9;
+  outline: none;
+}
