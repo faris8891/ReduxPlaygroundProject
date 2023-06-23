@@ -1,6 +1,7 @@
 import React from "react";
 import { addTask } from "../Redux/taskSlice";
 import { useSelector } from "react-redux";
+import UpdateModal from "./UpdateModal";
 
 export default function TaskCard({ taskHandler }) {
   const tasks = useSelector((store) => store.task.tasks);
@@ -14,7 +15,6 @@ export default function TaskCard({ taskHandler }) {
               <div className="card-body d-flex justify-content-between align-items-center">
                 <div>
                   <h3>{e.task}</h3>
-                  {e.id}
                   {e.complete ? <h1>true</h1> : <h1>false</h1>}
                 </div>
                 <div className="d-flex align-items-center justify-content-evenly">
@@ -25,8 +25,9 @@ export default function TaskCard({ taskHandler }) {
                     <box-icon type="solid" name="trash-alt"></box-icon>
                   </div>
                   <div className="p-2">
-                    <box-icon type="solid" name="edit"></box-icon>
+                    <UpdateModal taskId={e.id} taskName={e.task} />
                   </div>
+
                   <div
                     onClick={() => taskHandler("completeTask", e.id)}
                     className="p-2"
@@ -36,12 +37,6 @@ export default function TaskCard({ taskHandler }) {
                     ) : (
                       <box-icon name="toggle-left"></box-icon>
                     )}
-                  </div>
-                  <div
-                    onClick={() => taskHandler("completeTask", e.id)}
-                    className="p-2"
-                  >
-                    <box-icon name="check"></box-icon>
                   </div>
                 </div>
               </div>

@@ -14,7 +14,12 @@ const taskSlice = createSlice({
       const data = current(state.tasks).filter((e) => e.id !== action.payload);
       state.tasks = data;
     },
-    editTask: (state, action) => {},
+    editTask: (state, action) => {
+      const task = state.tasks.find((task) => task.id == action.payload.id);
+      if (task) {
+        task.task = action.payload.editedTask;
+      }
+    },
 
     completeTask: (state, action) => {
       const task = state.tasks.find((task) => task.id === action.payload);
