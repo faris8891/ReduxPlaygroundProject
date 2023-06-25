@@ -10,7 +10,7 @@
   margin: 10px;
 }
 .taskName {
-  width: 20px;
+  width: 400px;
   display: flex;
 
   flex-wrap: wrap;
