@@ -16,8 +16,9 @@ export default function TaskCard({ taskHandler }) {
               <div className="card">
                 <div
                   className={
-                    e.complete == true ? style.card_complete:
-                    style.card_pending 
+                    e.complete == true
+                      ? style.card_complete
+                      : style.card_pending
                   }
                 >
                   <div className="card-body d-flex justify-content-between align-items-center">
@@ -41,12 +42,12 @@ export default function TaskCard({ taskHandler }) {
                       >
                         {e.complete ? (
                           <box-icon
-                          size='md'
+                            size="md"
                             name="toggle-right"
                             color="#6f9a37"
                           ></box-icon>
                         ) : (
-                          <box-icon size='md' name="toggle-left"></box-icon>
+                          <box-icon size="md" name="toggle-left"></box-icon>
                         )}
                       </div>
                     </div>

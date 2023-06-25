@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import InputFiled from "./Input";
 import { useDispatch } from "react-redux";
 import { editTask } from "../Redux/taskSlice";
+
 
 export default function UpdateModal({ taskId, taskName }) {
   const dispatch = useDispatch();
@@ -61,6 +62,7 @@ export default function UpdateModal({ taskId, taskName }) {
             ) : null}
           </Modal.Body>
           <Modal.Footer>
+            
             <Button variant="secondary" onClick={handleClose}>
               Close
             </Button>

@@ -1,4 +1,4 @@
-import { useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import "./App.css";
 import Button1 from "./Components/Button";
 import Header from "./Components/Header";
@@ -36,6 +36,7 @@ function App() {
         break;
 
       default:
+        console.log("There is no action");
         break;
     }
   };
@@ -49,7 +50,6 @@ function App() {
         </Row>
         <Row>
           <Col></Col>
-
           <Col
             lg={5}
             xs={8}
@@ -57,24 +57,20 @@ function App() {
           >
             <Form onSubmit={handleSubmit}>
               <InputFiled handler={onchangeHandler} />
-              <Button1 />
+              <Button1 btnName="Add" />
             </Form>
           </Col>
-
           <Col></Col>
         </Row>
         <Row>
           <Col></Col>
-
           <Col lg={5} xs={8}>
             <TaskCard taskHandler={taskHandler} />
           </Col>
-
           <Col></Col>
         </Row>
       </Container>
     </>
   );
 }
-
 export default App;
