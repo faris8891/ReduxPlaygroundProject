@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { editTask } from "../Redux/taskSlice";
 
 
-export default function UpdateModal({ taskId, taskName }) {
+export default function UpdateModal({ taskId, taskName,}) {
   const dispatch = useDispatch();
 
   const [show, setShow] = useState(false);
